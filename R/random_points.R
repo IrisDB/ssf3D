@@ -34,9 +34,9 @@ random_points <- function(obs,
       u <- get_cartesian(obs$omega, obs$delta)
       NAs <- which(is.na(u))
       if(length(NAs) > 0) {
-        fit_kent <- kent.mle(u[-NAs,]) 
+        fit_kent <- Directional::kent.mle(u[-NAs,]) 
       } else {
-        fit_kent <- kent.mle(u)
+        fit_kent <- Directional::kent.mle(u)
       }
       kappa <- fit_kent$param["kappa"]
       rho <- fit_kent$param["beta"]
